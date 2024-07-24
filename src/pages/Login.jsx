@@ -5,12 +5,14 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { setCredentials } from '../redux/userSlice';
 import { toast } from 'react-toastify';
+import loadingGif from '/img/caracol.gif'
 
 
 const Login = () => {
   const [viewPass, setViewPass] = useState(false)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -20,7 +22,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     const loginUser = { email, password };
 
     try {
@@ -28,6 +30,7 @@ const Login = () => {
       const { token } = response.data;
       dispatch(setCredentials({ token }));
       navigate('/todo');
+      setIsLoading(false);
     } catch (error) {
       console.error('Error de autenticación', error);
       toast.error('Datos Incorrectos')
@@ -68,7 +71,7 @@ const Login = () => {
 
           </div>
 
-          <button type='submit' className='bg-neutral-950 hover:bg-neutral-800 duration-200 rounded-md font-semibold text-lg h-10 w-full text-white'>Ingresar</button>
+          <button type='submit' disabled={isLoading} className='bg-neutral-950 hover:bg-neutral-800 duration-200 rounded-md font-semibold text-lg h-10 w-full text-white'>{isLoading ? <img src={loadingGif} alt='Loading' className='w-6 mx-auto' /> : 'Ingresar' } </button>
         </form>
       </section>
       <p>No tienes cuenta? <Link to="/register" className='underline'>Registrate</Link></p>
