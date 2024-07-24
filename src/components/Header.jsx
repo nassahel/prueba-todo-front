@@ -13,10 +13,12 @@ const Header = () => {
   const username = useSelector((state) => state.auth.user);
   const userType = useSelector((state) => state.auth.userType);
 
+  const API_URL = import.meta.env.VITE_API_URL
+
   // funcion para remover el token y navegar al login (deslogueo)
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:3000/api/users/logout');
+      await axios.post(`${API_URL}/users/logout`);
       dispatch(logout());
       dispatch(clearNotes());
       navigate('/');
