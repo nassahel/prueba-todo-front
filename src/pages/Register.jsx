@@ -9,14 +9,14 @@ const Register = () => {
   const navigate = useNavigate();
 
   const inputStyle = 'bg-neutral-100 p-2 rounded-md w-full mb-4 shadow shadow-inner';
-
+  const API_URL = import.meta.env.VITE_API_URL
   const handleRegister = async (e) => {
     e.preventDefault();
 
     const user = { username, email, password };
 
     try {
-      const response = await axios.post('http://localhost:3000/api/users', user);
+      const response = await axios.post(`${API_URL}/users`, user);
 
       if (response.status === 201) {
         navigate('/');
