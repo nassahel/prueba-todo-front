@@ -16,13 +16,15 @@ const Login = () => {
 
   const inputStyle = 'bg-neutral-100 p-2 rounded-md w-full mb-4 shadow shadow-inner outline-none'
 
+  const API_URL = import.meta.env.VITE_API_URL
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
     const loginUser = { email, password };
 
     try {
-      const response = await axios.post('http://localhost:3000/api/users/login', loginUser);
+      const response = await axios.post(`${API_URL}/users/login`, loginUser);
       const { token } = response.data;
       dispatch(setCredentials({ token }));
       navigate('/todo');
