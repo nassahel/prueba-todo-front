@@ -43,6 +43,7 @@ const Register = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
+            maxLength={50}
           />
           <input
             type="email"
@@ -51,6 +52,7 @@ const Register = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            maxLength={50}
           />
           <input
             type="password"
@@ -59,6 +61,7 @@ const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            maxLength={50}
           />
           <button type="submit" className='bg-neutral-950 hover:bg-neutral-800 duration-200 rounded-md font-semibold text-lg h-10 w-full text-white'>
             Aceptar

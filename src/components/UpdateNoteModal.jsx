@@ -45,12 +45,16 @@ const UpdateNoteModal = ({ note, setUpdateNoteModal }) => {
           className={inputStyle}
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          required
+          maxLength={50}
         />
         <textarea
           placeholder='Ingresar tarea'
           className={`${inputStyle} h-32 resize-none`}
           value={content}
           onChange={(e) => setContent(e.target.value)}
+          required
+          maxLength={200}
         ></textarea>
         <div className='flex justify-center gap-8'>
           <button type="submit" className='bg-lime-500 hover:bg-lime-600 duration-200 font-semibold text-white px-3 py-1 rounded-md'>

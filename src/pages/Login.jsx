@@ -51,6 +51,7 @@ const Login = () => {
             type="text"
             placeholder='Email'
             className={inputStyle}
+            maxLength={50}
             required />
           <div className={`${inputStyle} flex items-center`}>
             <input
@@ -59,6 +60,7 @@ const Login = () => {
               type={viewPass ? 'text' : 'password'}
               placeholder='Contraseña'
               className='bg-neutral-100 grow outline-none'
+              maxLength={50}
               required />
             {viewPass ? <FaRegEye onClick={handleShowPass} size={17} /> : <FaRegEyeSlash onClick={handleShowPass} size={17} />}
 
