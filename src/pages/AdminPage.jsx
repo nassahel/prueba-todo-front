@@ -35,8 +35,13 @@ const AdminPage = () => {
   };
 
   const handleDeleteUserClick = (user) => {
-    setSelectedUser(user);
-    setDeleteUserModal(true);
+    if (user.userType === 'admin') {
+      toast.info('No puedes eliminar a un Administrador!')
+    } else {
+      setSelectedUser(user);
+      setDeleteUserModal(true);
+    }
+
   };
 
 
@@ -58,7 +63,7 @@ const AdminPage = () => {
           setDeleteUserModal={setDeleteUserModal}
           userId={selectedUser?._id}
           username={selectedUser?.username}
-          getAllUsers={getAllUsers} 
+          getAllUsers={getAllUsers}
         />
       )}
       <section className='flex md:hidden border-2 border-neutral-400 py-5 m-4 text-center items-center justify-center rounded-lg h-60 italic text-lg text-neutral-500'>

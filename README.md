@@ -3,9 +3,9 @@
 Aplicación de Tareas con caracteristicas avanzadas. Proyecto creado con React Vite.
 
 ## Links
-- [Link de La pagina](https://prueba-zoco-front.vercel.app/ "Link de La pagina")
-- [Link Frontend](https://github.com/nassahel/prueba-zoco-front "Link Frontend")
-- [Link Backend](https://github.com/nassahel/prueba-zoco-back "Link Backend")
+- [Link de La pagina](https://prueba-todo-front.vercel.app/ "Link de La pagina")
+- [Link Frontend](https://github.com/nassahel/prueba-todo-front "Link Frontend")
+- [Link Backend](https://github.com/nassahel/prueba-todo-back "Link Backend")
 
 
 ## Tecnologias Usadas
@@ -27,7 +27,7 @@ Aplicación de Tareas con caracteristicas avanzadas. Proyecto creado con React V
 
 ## Instalacion:
 - La aplicacion no necesita instalacion.
-- [Link de La pagina](https://prueba-zoco-front.vercel.app/ "Link de La pagina")
+- [Link de La pagina](https://prueba-todo-front.vercel.app/ "Link de La pagina")
 - El Frontend se encuenta alojado en [Vercel](https://vercel.com/ "Vercel")
 - El Backend se encuentra alojado en [Render](https://dashboard.render.com/ "Render")
 - La base de datos se encuentra alojada en [MongoDB](https://www.mongodb.com/ "MongoDB")
